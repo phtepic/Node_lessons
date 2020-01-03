@@ -11,8 +11,8 @@ async function run() {
   await connect_db();
   console.log("Done...");
   console.log("Deleting all from table...");
-  //await delete_sensors();
-  await delete_sensor(1111);
+  await delete_sensors();
+  //await delete_sensor(1111);
   console.log("Done...");
 }
 async function delete_sensors() {
