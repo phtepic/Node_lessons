@@ -11,7 +11,7 @@ const const_numer = 1;
 const const_text = "Hello";
 const const_bool = true;
 
-function variables() {
+function print_variables() {
   console.log("var " + var_numer);
   console.log("var " + var_text);
   console.log("var " + var_bool);

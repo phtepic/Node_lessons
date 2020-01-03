@@ -1,15 +1,14 @@
 ////////////////////SYNC FUNCTIONS///////////////////
-function f1() {
+function task_1() {
   console.log("foo");
 }
-function f2(text) {
+function task_2(text) {
   console.log(text);
 }
-function f3(number) {
+function task_3(number) {
   return ++number;
 }
-
-f1();
-f2("Hello");
-const number = f3(1);
+task_1();
+task_2("Hello");
+const number = task_3(1);
 console.log(number);
