@@ -4,7 +4,7 @@ exports.get_test = async function(req, res) {
   let data = {};
   data.received_test_message = test_message;
   data.response = "Thank you for get...";
-  await res.json(data);
+  res.json(data);
 };
 
 exports.post_test = async function(req, res) {
@@ -13,5 +13,5 @@ exports.post_test = async function(req, res) {
   let data = {};
   data.received_test_message = test_message;
   data.response = "Thank you for post...";
-  await res.json(data);
+  res.json(data);
 };
