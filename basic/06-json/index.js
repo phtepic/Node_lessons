@@ -5,7 +5,7 @@ let data_array = [
   { text: "hello", number: 2 }
 ];
 
-function print_data() {
+function process_data() {
   data_simple.number++;
   data_array[1].number++;
 
@@ -18,4 +18,4 @@ function print_data() {
   console.log(data_array_filtered);
 }
 
-print_data();
+process_data();
