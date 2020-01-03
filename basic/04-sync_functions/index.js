@@ -11,5 +11,5 @@ function f3(number) {
 
 f1();
 f2("Hello");
-let number = f3(1);
+const number = f3(1);
 console.log(number);

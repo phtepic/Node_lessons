@@ -11,7 +11,7 @@ async function f3(number) {
 async function async_functions() {
   await f1();
   await f2("Hello");
-  let number = await f3(1);
+  const number = await f3(1);
   console.log(number);
 }
 async_functions();
