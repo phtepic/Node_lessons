@@ -3,10 +3,6 @@ let number_array = [];
 
 const text_array = ["Hello", "Hello world", "Car"];
 
-function filter() {
-  return text_array.filter((element) => element.includes("Hello"));
-}
-
 function number_array_work() {
   for (let index = 0; index < 10; index++) {
     number_array.push(index);
@@ -18,6 +14,9 @@ function number_array_work() {
   });
 }
 
-const text_array_filtered = filter();
+const text_array_filtered = text_array.filter((element) =>
+  element.includes("Hello")
+);
 console.log(text_array_filtered);
+
 number_array_work();
