@@ -9,19 +9,24 @@ const sensors = [
 ];
 
 async function connect_mongo() {
-  mongoose.connect("mongodb://localhost:27017/lesson", {
+  console.log("Connecting to db...");
+  await mongoose.connect("mongodb://localhost:27017/lesson", {
     useNewUrlParser: true
   });
   mongoose.set("useFindAndModify", false);
   mongoose.set("useCreateIndex", true);
   mongoose.set("useUnifiedTopology", true);
+  console.log("Connected...");
 }
 
 async function save_data(data) {
-  data.forEach((d) => {
+  for (let index = 0; index < data.length; index++) {
+    const d = data[index];
     const sensor_to_save = new sensor(d);
-    sensor_to_save.save();
-  });
+    console.log("Saving... " + sensor_to_save);
+    await sensor_to_save.save();
+  }
+  console.log("Done...");
 }
 
 async function run() {
