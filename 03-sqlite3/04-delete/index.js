@@ -11,11 +11,16 @@ async function run() {
   await connect_db();
   console.log("Done...");
   console.log("Deleting all from table...");
-  await delete_all();
+  //await delete_sensors();
+  await delete_sensor(1111);
   console.log("Done...");
 }
-async function delete_all() {
+async function delete_sensors() {
   let query = "DELETE FROM SENSOR";
+  await db.run(query);
+}
+async function delete_sensor(serial) {
+  let query = "DELETE FROM SENSOR WHERE serial = " + "'" + serial + "'";
   await db.run(query);
 }
 run();
