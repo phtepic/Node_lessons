@@ -7,7 +7,7 @@ async function get_sensors() {
       headers: {}
     });
     if (res.statusText === "OK") {
-      console.log(res.data);
+      console.log(res.data.sensors);
     } else {
       console.log("Something went bad...");
     }

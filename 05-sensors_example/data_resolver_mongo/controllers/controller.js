@@ -19,7 +19,5 @@ async function update_value(serial, value) {
 exports.update_sensor = async function(req, res) {
   const { serial, value } = await req.body;
   console.log(req.body);
-  let data = {};
   await update_value(serial, value);
-  res.json(data);
 };
