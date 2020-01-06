@@ -23,4 +23,4 @@ function print_variables() {
   console.log("const " + const_text);
 }
 
-variables();
+print_variables();

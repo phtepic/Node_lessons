@@ -13,10 +13,11 @@ function number_array_work() {
     console.log(element);
   });
 }
-
-const text_array_filtered = text_array.filter((element) =>
-  element.includes("Hello")
-);
-console.log(text_array_filtered);
+function filter_array(value) {
+  return text_array.filter((element) => element.includes(value));
+}
 
 number_array_work();
+
+const text_array_filtered = filter_array("Hello");
+console.log(text_array_filtered);
