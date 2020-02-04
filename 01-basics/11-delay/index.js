@@ -6,7 +6,7 @@ async function task_1() {
 async function task_2() {
   console.log("Task 2");
 }
-function task_3() {
+async function task_3() {
   console.log("Task 3");
 }
 async function do_work() {

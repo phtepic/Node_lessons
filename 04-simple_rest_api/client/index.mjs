@@ -1,8 +1,8 @@
-const axios = require("axios");
+import axios from "axios";
 
 async function get_test() {
   try {
-    let res = await axios.get("http://localhost:5001/get_test", {
+    const res = await axios.get("http://localhost:5001/get_test", {
       params: { test_message: "Get hello API Server" },
       headers: {}
     });
@@ -17,7 +17,7 @@ async function get_test() {
 }
 async function post_test() {
   try {
-    let res = await axios.post("http://localhost:5001/post_test", {
+    const res = await axios.post("http://localhost:5001/post_test", {
       test_message: "Post hello API Server"
     });
     if (res.statusText === "OK") {

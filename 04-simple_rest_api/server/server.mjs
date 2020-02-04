@@ -1,12 +1,10 @@
-const express = require("express");
-const bodyParser = require("body-parser");
-
+import express from "express";
+import bodyParser from "body-parser";
+import { routes } from "./routes/RESTRoutes.mjs";
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// REST api
-const routes = require("./routes/RESTRoutes");
 routes(app);
 
 app.listen(5001, function(err) {
