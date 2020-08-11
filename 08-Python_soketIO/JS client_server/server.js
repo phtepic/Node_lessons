@@ -17,9 +17,15 @@ async function run_server() {
     });
 
     socket.on("message", (data) => {
-      // It is neccessary to parse JSON like string before use
-      let msg = JSON.parse(data)
-      console.log(msg.msg);
+      if (typeof data === 'string') {
+        // This message comes from the Python client (it has form of a string)
+        // It is neccessary to parse JSON like string before use
+        let msg = JSON.parse(data);
+        console.log(msg.msg);
+      } else {
+        // This message is send by JS client - it is already JSON
+        console.log(data.msg);
+      }
     });
   });
 

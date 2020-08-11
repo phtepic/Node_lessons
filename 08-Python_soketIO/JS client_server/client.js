@@ -6,14 +6,20 @@ async function run_client() {
     console.log("running");
     client.send({
       type: "msg",
-      msg: "JS client welcome msg"
+      msg: "JS client test msg"
     })
   });
 
   client.on("message", (data) => {
-    // It is neccessary to parse JSON like string before use
-    let msg = JSON.parse(data)
-    console.log(msg.msg);
+    if (typeof data === 'string') {
+      // This message is send by Python client - it is a string
+      // It is neccessary to parse JSON like string before use
+      let msg = JSON.parse(data);
+      console.log(msg.msg);
+    } else {
+      // This message is send by JS server - it has form of JSON by default
+      console.log(data.msg);
+    }
   });
 }
 
