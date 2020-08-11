@@ -11,7 +11,10 @@ async function run_server() {
   io_server.on("connection", (socket) => {
     console.log("New client connected!");
 
-    io_server.send("JS Server says hello!");
+    io_server.send({
+      type: "msg",
+      msg: "JS server says hello"
+    });
 
     socket.on("message", (data) => {
       // It is neccessary to parse JSON like string before use
@@ -26,7 +29,10 @@ async function run_server() {
 }
 
 async function send_test_msg() {
-  io_server.send("JS Server test message!")
+  io_server.send({
+    type: "msg",
+    msg: "JS server test message!"
+  })
 }
 
 async function run() {

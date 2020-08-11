@@ -1,0 +1,1 @@
+JS JSON se chová jako dictionary by default, Python si ho tak přežvýká rovnou.

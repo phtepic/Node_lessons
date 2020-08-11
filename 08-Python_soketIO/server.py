@@ -38,12 +38,18 @@ def disconnect(sid):
 # event occures
 @sio.event
 def message(sed, data):
-    # Incoming JSON has format {"type": "msg" "msg": "SOME MESSAGE"}
-    # It needs to be parsed using json.loads() method - it converts JSON like
-    # string to Python
-
-    message = json.loads(data)
-    print(message['msg'])
+    # Processing the message here is a bit tricky: you need to check the type
+    # of the data parameter. Python client is set to send JSON in a text format
+    # whereas JS/NODE.js JSON is interpreted as dictionary by default.
+    # Therefore we need to check datatype.
+    if isinstance(data, dict):
+        print(data['msg'])
+    else:
+        # Incoming JSON has format {"type": "msg" "msg": "SOME MESSAGE"}
+        # It needs to be parsed using json.loads() method - it converts JSON like
+        # string to Python
+        message = json.loads(data)
+        print(message['msg'])
 
 
 if __name__ == '__main__':

@@ -4,16 +4,20 @@ async function run_client() {
   client.on("disconnect", function() {});
   client.on("connect", () => {
     console.log("running");
-    client.send("JS client says hello!")
+    client.send({
+      type: "msg",
+      msg: "JS client welcome msg"
+    })
   });
 
   client.on("message", (data) => {
-    console.log(data);
+    // It is neccessary to parse JSON like string before use
+    let msg = JSON.parse(data)
+    console.log(msg.msg);
   });
 }
 
 async function send_data(data) {
-  // client.send("JS client test message!");
   client.send({
     type: "msg",
     msg: "JS client test msg"
